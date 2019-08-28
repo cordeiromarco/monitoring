@@ -43,4 +43,10 @@ systemctl start zabbix-agent
 systemctl status zabbix-agent
 tail /var/log/zabbix/zabbix_agentd.log
 
+Zabbix Console
+go to "configuration -- host groups --- Discovered hosts"
+then select new host and add to the correct group.
+that´s it folks.
+
+
 
