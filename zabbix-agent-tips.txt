@@ -22,23 +22,24 @@ Amazon Linux
 
 yum install -y http://repo.zabbix.com/zabbix/3.0/rhel/6/x86_64/zabbix-agent-3.0.9-1.el6.x86_64.rpm
 curl -LJO https://github.com/cordeiromarco/monitoring/raw/master/zabbix_agentd.conf
-edit conf and change hostname
+# edit zabbix_agentd.conf and change hostname !
 cp zabbix_agentd.conf /etc/zabbix/.
 service zabbix-agent start
 chkconfig  zabbix-agent on
 check if service is set
 chkconfig --list zabbix-agent
-zabbix-agent    0:off   1:off   2:on    3:on    4:on    5:on    6:off
-
+tail /var/log/zabbix/zabbix-agentd.log
 
 CentOS
 
+cat /etc/centos-release
+CentOS Linux release 7.5.1804 (Core)
 yum install -y http://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/zabbix-agent-3.0.28-1.el7.x86_64.rpm
 curl -LJO https://github.com/cordeiromarco/monitoring/raw/master/zabbix_agentd.conf
-**copy link above from raw version of file! **
+# edit zabbix_agentd.conf and change hostname !
 cp zabbix_agentd.conf /etc/zabbix/.
 systemctl enable zabbix-agent
 systemctl start zabbix-agent
-
+tail /var/log/zabbix/zabbix-agentd.log
 
 
