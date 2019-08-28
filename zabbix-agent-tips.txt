@@ -28,7 +28,7 @@ service zabbix-agent start
 chkconfig  zabbix-agent on
 check if service is set
 chkconfig --list zabbix-agent
-tail /var/log/zabbix/zabbix-agentd.log
+tail /var/log/zabbix/zabbix_agentd.log
 
 CentOS
 
@@ -40,6 +40,7 @@ curl -LJO https://github.com/cordeiromarco/monitoring/raw/master/zabbix_agentd.c
 cp zabbix_agentd.conf /etc/zabbix/.
 systemctl enable zabbix-agent
 systemctl start zabbix-agent
-tail /var/log/zabbix/zabbix-agentd.log
+systemctl status zabbix-agent
+tail /var/log/zabbix/zabbix_agentd.log
 
 
